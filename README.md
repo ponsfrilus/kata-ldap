@@ -84,13 +84,13 @@ questions.
 1. Trouver la personne avec le numéro sciper le plus élevé.
 
 ### Requêtes sur Active Directory avec un ticket Kerberos
-1) Les paquets `krb5-usr`, `libsasl2-2`, `libsasl2-modules-gssapi-mit`
-2) Le royaume (REALM) Kerberos de l'EPFL est "`INTRANET.EPFL.CH`"
-3) Cela devrait configurer le   
+1. Les paquets `krb5-usr`, `libsasl2-2`, `libsasl2-modules-gssapi-mit`
+2. Le royaume (REALM) Kerberos de l'EPFL est "`INTRANET.EPFL.CH`"
+.) Cela devrait configurer le   
    `default_realm = INTRANET.EPFL.CH`
    de la séction `[libdefaults]` du fichier de configuration `/etc/krb5.conf`
-4) Pour éviter l'erreur "Server not found in Kerberos database" de GSSAPI, spécifier les adresses des serveurs intranet de l'école dans `/etc/hosts`, e.g.
+.) Pour éviter l'erreur "Server not found in Kerberos database" de GSSAPI, spécifier les adresses des serveurs intranet de l'école dans `/etc/hosts`, e.g.
   `128.178.15.229 ad3.intranet.epfl.ch ad3`
-5) Optenir un ticket Kerberos avec la commande `kinit username`
-6) Tester une requête avec:  
+5. Optenir un ticket Kerberos avec la commande `kinit username`
+6. Tester une requête avec:  
    `ldapsearch -O maxssf=0 -Y GSSAPI -H ldap://ad3.epfl.ch -LLL -b "dc=intranet,dc=epfl,dc=ch" '(uid=username)'`
