@@ -89,8 +89,8 @@ questions.
 3) Cela devrait configurer le   
    `default_realm = INTRANET.EPFL.CH`
    de la séction `[libdefaults]` du fichier de configuration `/etc/krb5.conf`
-4) Pour éviter l'erreur "Server not found in Kerberos database" de GSSAPI, spécifier les adresses des serveurs intranet de l'école, e.g.
+4) Pour éviter l'erreur "Server not found in Kerberos database" de GSSAPI, spécifier les adresses des serveurs intranet de l'école dans `/etc/hosts`, e.g.
   `128.178.15.229 ad3.intranet.epfl.ch ad3`
-5) Optenir un ticket Kerberos avec la commande `kinit`
+5) Optenir un ticket Kerberos avec la commande `kinit username`
 6) Tester une requête avec:  
-   `LDAPTLS_REQCERT=never ldapsearch -O maxssf=0 -Y GSSAPI -H ldaps://ad3.epfl.ch -LLL -b "dc=intranet,dc=epfl,dc=ch" '(uid=username)'`
+   `ldapsearch -O maxssf=0 -Y GSSAPI -H ldap://ad3.epfl.ch -LLL -b "dc=intranet,dc=epfl,dc=ch" '(uid=username)'`
