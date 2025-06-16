@@ -1,4 +1,5 @@
 ## Participants
+
 (Liste des personnes ayant effectué ce kata)
 
-  * [@ponsfrilus](https://github.com/ponsfrilus)
+  * [@octocat](https://github.com/octocat) dans ce [dépôt](https://github.com/octocat/kata-ldap)

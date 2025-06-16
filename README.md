@@ -5,15 +5,18 @@ Kata d'exploration d'un annuaire LDAP (ldapsearch).
 <!-- start:apropos -->
 > **À propos**
 >
-> ⓘ Ceci est la donnée d'un [kata], un _exercice de programmation_ qui se
-> déroule généralement dans le cadre d'un [coding dojo]. Il est proposé aux
+> ⓘ Ce dépôt contient un [kata], c'est à dire un _exercice de programmation_
+> généralement utilisé dans le cadre d'un [coding dojo]. Il est proposé aux
 > membres du dojo de l'[EPFL] et fait partie d'une collection de différents
-> katas identifiés par le tag **[epfl-dojo-kata]** sur GitHub.  
-> Vous êtes plus que bienvenu·e d'essayer de le réaliser dans le langage de
-> programmation de votre choix. Lorsque c'est terminé, ajoutez-vous à la liste
-> de ceux qui l'ont fait dans ce document en proposant une [Pull Request]. Vous
-> pouvez également partager votre intérêt pour ce dépôt en
-> le «[stargazant]», c'est à dire en lui ajoutant une ⭐.  
+> katas identifiés par le topic **[epfl-dojo-kata]** sur GitHub.
+>
+> Comment participer ?
+>
+>  - Réalisez le kata dans le langage de programmation de votre choix.
+>  - Ajoutez-vous à la liste des participants en proposant une [pull request].
+>  - Partagez votre intérêt pour ce dépôten lui ajoutant une ⭐.
+>  - Proposez des suggestions ou signalez des bugs en ouvrant une issue.
+>
 > Bonne lecture et bon code !
 
 [kata]: https://fr.wikipedia.org/wiki/Coding_dojo#Kata
@@ -21,13 +24,15 @@ Kata d'exploration d'un annuaire LDAP (ldapsearch).
 [EPFL]: https://www.epfl.ch
 [epfl-dojo-kata]: https://github.com/topics/epfl-dojo-kata
 [Pull Request]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
-[stargazant]: https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars
+
+<!-- Texte mis à jour en juin 2025 -->
 <!-- end:apropos -->
+
 
 _Note_: les exercices qui suivent sont basés sur le LDAP de l'EPFL. Par
 conséquent, ils est possible que certains champs ne soient pas présents dans
 d'autres annuaires. Une adaptation des exercices ci-dessous en fonction du
-schéma de votre annuaire est probablement nécessaire, bien que les principes de 
+schéma de votre annuaire est probablement nécessaire, bien que les principes de
 base restent les mêmes.
 
 
@@ -43,12 +48,10 @@ repo et créer une branche portant le nom de votre username (`git checkout -b
 username` par exemple `git checkout -b ponsfrilus`, depuis votre fork). 
 
 1. Ajouter un fichier `solution_username.md` (par exemple
-`solution_ponsfrilus.md`) dans  lequel vous indiquer les réponses aux différents
-questions. 
+`solution_ponsfrilus.md`) dans lequel vous indiquer les réponses aux différents
+questions.
 
-1. Ajouter votre nom d'utilisateur au fichier [CONTRIBUTORS.md](./CONTRIBUTORS.md).
-
-1. Faites ensuite une "pull request" pour ajouter vos solutions à ce repo.
+1. Editer le fichier [CONTRIBUTORS.md](https://github.com/ponsfrilus/kata-ldap/edit/master/CONTRIBUTORS.md) directement depuis l'interface de GitHub pour vous y ajouter.
 
 
 ## Données
@@ -59,6 +62,7 @@ questions.
 1. Les annuaires LDAP ont des champs `c`, `o`, `dc`, `ou`, `dn`, `cn` et `sn`.  
    Que signifient-ils ?
 1. Quels sont les sujets des [RFC 4511](https://tools.ietf.org/rfc/index) et suivantes ?
+
 
 ### Requêtes de base
 
@@ -85,6 +89,7 @@ questions.
 1. Donner 2 requêtes basées sur celles de l'exercice précédent utilisant le 
    caractère wildcard.
 
+
 ### Base de recherche, groupe et unité organisationnelle
 
 1. Trouver tous les emails des personnes dans l'unité IDEV-FSD.
@@ -93,12 +98,14 @@ questions.
 1. Expliquer les différents types d'organisation que donne la requête 
    `ldapsearch -x -H ldaps://ldap.epfl.ch -b 'c=ch' -LLL 'objectclass=organization' dn`
 
+
 ### Filtres avancés
 
 1. Trouver toutes les personnes ayant un compte "guest" présentent dans le 
    groupe [epfl-dojo](https://groups.epfl.ch/cgi-bin/groups/viewgroup?groupid=S13602).
 1. Trouver les personnes de l'unité IDEV-FSD qui ne sont pas dans le 
    groupe [epfl-dojo](https://groups.epfl.ch/cgi-bin/groups/viewgroup?groupid=S13602).
+
 
 ### Pour aller plus loin
 
@@ -108,6 +115,26 @@ questions.
 1. Compter le nombre d'unité à l'EPFL.
 1. Compter le nombre de Professeurs dans l'école.
 1. Trouver la personne avec le numéro sciper le plus élevé.
+
+
+### Cas pratique
+
+Compléter la donnée suivante :
+
+**Les plus courts**
+ 1) Prénom complet le plus court :
+ 2) Nom de famille complet le plus court :
+ 3) Nom complet le plus court :
+ 4) Username le plus court :
+ 5) Email le plus court :
+
+**Les plus longs**
+ 1) Nom de famille complet le plus long :
+ 2) Nom complet le plus long :
+ 3) Prénom complet le plus long :
+ 4) Email le plus long :
+ 5) Username le plus long :
+
 
 ### Requêtes sur Active Directory avec un ticket Kerberos
 
